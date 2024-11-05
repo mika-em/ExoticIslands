@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExoticIslands_api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f5856ca80496fe48bd8068fdf646e4595682649")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17248371c2c5d4c6b23b8afab017a8455a9628a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExoticIslands_api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExoticIslands_api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

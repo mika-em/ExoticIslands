@@ -1,6 +1,6 @@
 using ExoticIslands_api.Data;
 using ExoticIslands_api.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +8,7 @@ namespace MyApp.Namespace
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("IslandPolicy")]
     public class IslandsController : ControllerBase
     {
         private readonly IslandContext _context;
@@ -30,9 +31,21 @@ namespace MyApp.Namespace
 
         // GET api/<IslandsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<Island>> Get(int id)
         {
-            return "value";
+            if (_context.Islands == null)
+            {
+                return NotFound();
+            }
+            var island = await _context.Islands
+                .FirstOrDefaultAsync(i => i.Id == id);
+
+            if (island == null)
+            {
+                return NotFound();
+            }
+
+            return island;
         }
 
         // POST api/<IslandsController>
